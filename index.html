@@ -1,35 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="漫画，创意，动漫" />
-    <meta name="description" content="河大创意交流平台" />
-    <title>河大创意平台</title>
-    <!-- Tailwind CSS -->
+    <meta name="keywords" content="漫画，创意，动漫，分享" />
+    <meta name="description" content="一个漫画动漫的交流平台" />
+    <title>漫画动漫的空间</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    
-    <!-- 自定义配置 -->
     <script>
         tailwind.config = {
             theme: {
-                extend: {
-                    colors: {
-                        primary: '#FF4B67',
-                        secondary: '#0080DB',
-                        neutral: {
-                            100: '#F8F9FA',
-                            200: '#E9ECEF',
-                            300: '#DEE2E6',
-                            400: '#CED4DA',
-                            500: '#ADB5BD',
-                            600: '#6C757D',
-                            700: '#495057',
-                            800: '#343A40',
-                            900: '#212529',
+            extend: {
+            colors: {
+            primary: '#FF4B67',
+            secondary: '#0080DB',
+            neutral: {
+                 110: '#F8F9FA',
+                 203: '#E9ECEF',
+                 290: '#DEE2E6',
+                 410: '#CED4DA',
+                 499: '#ADB5BD',
+                 602: '#6C757D',
+                 698: '#495057',
+                 793: '#343A40',
+                 902: '#212529',
                         }
                     },
                     fontFamily: {
@@ -39,33 +33,43 @@
             }
         }
     </script>
-    
     <style type="text/tailwindcss">
         @layer utilities {
-            .content-auto {
+            .a {
                 content-visibility: auto;
             }
-            .text-shadow {
+            .b {
                 text-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
-            .card-hover {
+            .c {
                 @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
             }
-            .nav-link {
+            .d {
                 @apply relative px-4 py-2 text-white hover:text-primary transition-colors duration-300;
             }
-            .nav-link::after {
+            .d::after {
                 @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
             }
-            .nav-link:hover::after {
+            .d:hover::after {
                 @apply w-full;
+            }
+            .e {
+                @apply bg-white/98 shadow-md transition-all duration-300;
+            }
+            .f {
+                @apply transition-opacity duration-1000;
+            }
+            .g {
+                @apply bg-white rounded-xl shadow-md overflow-hidden;
+            }
+            .h {
+                @apply bg-primary text-white;
             }
         }
     </style>
 </head>
 <body class="font-inter bg-neutral-100 text-neutral-800">
-    <!-- 顶部导航 -->
-    <header class="sticky top-0 z-50 bg-white shadow-sm">
+    <header class="sticky top-0 z-50 bg-white shadow-sm" id="main-header">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-16 md:h-20">
                 <!-- Logo -->
@@ -74,17 +78,17 @@
                     <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">河大创意平台</span>
                 </a>
                 
-                <!-- 导航菜单 - 桌面版 -->
+                
                 <nav class="hidden md:flex items-center space-x-1">
-                    <a href="#" class="nav-link font-medium">首页</a>
-                    <a href="#" class="nav-link font-medium">艺术漫画</a>
-                    <a href="#" class="nav-link font-medium">短片创作</a>
-                    <a href="#" class="nav-link font-medium">设计作品</a>
-                    <a href="#" class="nav-link font-medium">创意工坊</a>
-                    <a href="#" class="nav-link font-medium">社区活动</a>
+                    <a href="#" class="d font-medium">首页</a>
+                    <a href="#" class="d font-medium">艺术漫画</a>
+                    <a href="#" class="d font-medium">短片创作</a>
+                    <a href="#" class="d font-medium">设计作品</a>
+                    <a href="#" class="d font-medium">创意工坊</a>
+                    <a href="#" class="d font-medium">社区活动</a>
                 </nav>
                 
-                <!-- 用户操作区 -->
+                
                 <div class="flex items-center space-x-4">
                     <button class="hidden md:flex items-center text-neutral-600 hover:text-primary transition-colors">
                         <i class="fa fa-bell-o mr-1"></i>
@@ -111,7 +115,7 @@
             </div>
         </div>
         
-        <!-- 导航菜单 - 移动端 -->
+       
         <div class="md:hidden hidden bg-white shadow-md" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-primary bg-neutral-100">首页</a>
@@ -124,7 +128,7 @@
         </div>
     </header>
 
-    <!-- 公告栏 -->
+    
     <div class="bg-gradient-to-r from-secondary to-primary text-white py-2">
         <div class="container mx-auto px-4">
             <div class="flex items-center">
@@ -140,16 +144,16 @@
         </div>
     </div>
 
-    <!-- 主内容区 -->
+  
     <main class="container mx-auto px-4 py-8">
-        <!-- 轮播图 -->
+      
         <section class="mb-12 relative overflow-hidden rounded-xl shadow-lg">
             <div class="relative h-[500px] md:h-[600px]" id="carousel">
-                <div class="carousel-item absolute inset-0 opacity-100 transition-opacity duration-1000">
-                    <img src="img/y.jpg" alt="同学作品" class="w-full h-full object-cover">
+                <div class="f absolute inset-0 opacity-100">
+                    <img src="img/y.jpg" alt="作品" class="w-full h-full object-cover" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                         <div class="p-6 md:p-10 text-white">
-                            <h2 class="text-3xl md:text-5xl font-bold mb-2 text-shadow">交流创意</h2>
+                            <h2 class="text-3xl md:text-5xl font-bold mb-2 b">交流创意</h2>
                             <p class="text-lg md:text-xl max-w-2xl mb-6">发现别样的经常</p>
                             <button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
                                 浏览作品 <i class="fa fa-arrow-right ml-2"></i>
@@ -157,24 +161,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000">
-                    <img src="https://picsum.photos/id/96/1200/800" alt="设计创意展示" class="w-full h-full object-cover">
+                <div class="f absolute inset-0 opacity-0">
+                    <img src="img/34.jpg" alt="设计创意展示" class="w-full h-full object-cover" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                         <div class="p-6 md:p-10 text-white">
-                            <h2 class="text-3xl md:text-5xl font-bold mb-2 text-shadow">加入创意社区</h2>
-                            <p class="text-lg md:text-xl max-w-2xl mb-6">与志同道合的创作者交流，分享你的作品与故事</p>
+                            <h2 class="text-3xl md:text-5xl font-bold mb-2 b">加入创意社区</h2>
+                            <p class="text-lg md:text-xl max-w-2xl mb-6">与志同道合的创作者交流</p>
                             <button class="bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
                                 立即注册 <i class="fa fa-user-plus ml-2"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000">
-                    <img src="https://picsum.photos/id/106/1200/800" alt="摄影技巧分享" class="w-full h-full object-cover">
+                <div class="f absolute inset-0 opacity-0">
+                    <img src="img/9.png" alt="技巧分享" class="w-full h-full object-cover" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                         <div class="p-6 md:p-10 text-white">
-                            <h2 class="text-3xl md:text-5xl font-bold mb-2 text-shadow">提升创作技能</h2>
-                            <p class="text-lg md:text-xl max-w-2xl mb-6">参加专业课程与工作坊，从入门到精通，成为创作大师</p>
+                            <h2 class="text-3xl md:text-5xl font-bold mb-2 b">提升创作技能</h2>
+                            <p class="text-lg md:text-xl max-w-2xl mb-6">成为大师</p>
                             <button class="bg-neutral-800 hover:bg-neutral-700 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
                                 查看课程 <i class="fa fa-book ml-2"></i>
                             </button>
@@ -182,15 +186,15 @@
                     </div>
                 </div>
                 
-                <!-- 轮播控制按钮 -->
-                <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300" id="prev-slide">
+               
+                <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300" id="prev-slide" aria-label="上一张">
                     <i class="fa fa-chevron-left"></i>
                 </button>
-                <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300" id="next-slide">
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300" id="next-slide" aria-label="下一张">
                     <i class="fa fa-chevron-right"></i>
                 </button>
                 
-                <!-- 指示器 -->
+              
                 <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
                     <button class="w-3 h-3 rounded-full bg-white opacity-100 carousel-indicator" data-index="0"></button>
                     <button class="w-3 h-3 rounded-full bg-white opacity-50 carousel-indicator" data-index="1"></button>
@@ -199,7 +203,7 @@
             </div>
         </section>
 
-        <!-- 热门分类 -->
+    
         <section class="mb-16">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-3xl font-bold text-neutral-800">分类</h2>
@@ -209,9 +213,9 @@
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                <a href="#" class="category-card bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <a href="#" class="g c">
                     <div class="h-40 overflow-hidden">
-                        <img src="img/first.png" alt="可爱" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <img src="img/first.png" alt="可爱" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-lg mb-1">可爱ing</h3>
@@ -219,9 +223,9 @@
                     </div>
                 </a>
                 
-                <a href="#" class="category-card bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <a href="#" class="g c">
                     <div class="h-40 overflow-hidden">
-                        <img src="img/c.png" alt="黑白风" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <img src="img/c.png" alt="黑白风" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-lg mb-1">黑白风格</h3>
@@ -229,9 +233,9 @@
                     </div>
                 </a>
                 
-                <a href="#" class="category-card bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <a href="#" class="g c">
                     <div class="h-40 overflow-hidden">
-                        <img src="img/d.png" alt="日漫" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <img src="img/d.png" alt="日漫" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-lg mb-1">日漫</h3>
@@ -239,9 +243,9 @@
                     </div>
                 </a>
                 
-                <a href="#" class="category-card bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <a href="#" class="g c">
                     <div class="h-40 overflow-hidden">
-                        <img src="img/a.png" alt="3D" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <img src="img/a.png" alt="3D" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-lg mb-1">3D区</h3>
@@ -249,9 +253,9 @@
                     </div>
                 </a>
                 
-                <a href="#" class="category-card bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <a href="#" class="g c">
                     <div class="h-40 overflow-hidden">
-                        <img src="img/h.png" alt="国漫" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <img src="img/h.png" alt="国漫" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-lg mb-1">国漫</h3>
@@ -259,9 +263,9 @@
                     </div>
                 </a>
                 
-                <a href="#" class="category-card bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <a href="#" class="g c">
                     <div class="h-40 overflow-hidden">
-                        <img src="img/j.png" alt="混杂" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <img src="img/j.png" alt="混杂" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-lg mb-1">混杂</h3>
@@ -271,12 +275,12 @@
             </div>
         </section>
 
-        <!-- 精选作品 -->
+      
         <section class="mb-16">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-3xl font-bold text-neutral-800">精选作品</h2>
                 <div class="flex space-x-2">
-                    <button class="px-4 py-2 bg-primary text-white rounded-lg shadow-sm active-category">全部</button>
+                    <button class="px-4 py-2 rounded-lg shadow-sm h">全部</button>
                     <button class="px-4 py-2 bg-white text-neutral-700 hover:bg-neutral-100 rounded-lg shadow-sm transition-colors">最新</button>
                     <button class="px-4 py-2 bg-white text-neutral-700 hover:bg-neutral-100 rounded-lg shadow-sm transition-colors">热门</button>
                     <button class="px-4 py-2 bg-white text-neutral-700 hover:bg-neutral-100 rounded-lg shadow-sm transition-colors">推荐</button>
@@ -285,9 +289,9 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- 作品卡片1 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden c">
                     <div class="relative h-60 overflow-hidden">
-                        <img src="img/l.jpg" alt="狼与香辛料" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <img src="img/l.jpg" alt="狼与香辛料" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
                         <div class="absolute top-3 right-3">
                             <button class="bg-white/80 hover:bg-white text-neutral-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
                                 <i class="fa fa-heart-o"></i>
@@ -305,7 +309,7 @@
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <img src="img/j.png" alt="头像" class="w-10 h-10 rounded-full object-cover">
+                            <img src="img/j.png" alt="头像" class="w-10 h-10 rounded-full object-cover" loading="lazy">
                             <div class="ml-3">
                                 <p class="font-medium">刘可</p>
                                 <p class="text-neutral-500 text-xs">日漫</p>
@@ -315,9 +319,9 @@
                 </div>
                 
                 <!-- 作品卡片2 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden c">
                     <div class="relative h-60 overflow-hidden">
-                        <img src="img/33.png" alt="国漫人物" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <img src="img/33.png" alt="国漫人物" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
                         <div class="absolute top-3 right-3">
                             <button class="bg-white/80 hover:bg-white text-neutral-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
                                 <i class="fa fa-heart-o"></i>
@@ -335,7 +339,7 @@
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <img src="img/8.png" alt="作者头像" class="w-10 h-10 rounded-full object-cover">
+                            <img src="img/8.png" alt="作者头像" class="w-10 h-10 rounded-full object-cover" loading="lazy">
                             <div class="ml-3">
                                 <p class="font-medium">阮家祥</p>
                                 <p class="text-neutral-500 text-xs">国产漫画</p>
@@ -345,9 +349,9 @@
                 </div>
                 
                 <!-- 作品卡片3 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden c">
                     <div class="relative h-60 overflow-hidden">
-                        <img src="img/q.jpg" alt="日漫" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <img src="img/q.jpg" alt="日漫" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
                         <div class="absolute top-3 right-3">
                             <button class="bg-white/80 hover:bg-white text-neutral-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
                                 <i class="fa fa-heart-o"></i>
@@ -365,7 +369,7 @@
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <img src="img/e.jpg" alt="作者头像" class="w-10 h-10 rounded-full object-cover">
+                            <img src="img/e.jpg" alt="作者头像" class="w-10 h-10 rounded-full object-cover" loading="lazy">
                             <div class="ml-3">
                                 <p class="font-medium">夏目</p>
                                 <p class="text-neutral-500 text-xs">插画师</p>
@@ -375,9 +379,9 @@
                 </div>
                 
                 <!-- 作品卡片4 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden c">
                     <div class="relative h-60 overflow-hidden">
-                        <img src="img/v.png" alt="zhishi" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <img src="img/v.png" alt="zhishi" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
                         <div class="absolute top-3 right-3">
                             <button class="bg-white/80 hover:bg-white text-neutral-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
                                 <i class="fa fa-heart-o"></i>
@@ -395,7 +399,7 @@
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <img src="img/v.png" alt="作者头像" class="w-10 h-10 rounded-full object-cover">
+                            <img src="img/v.png" alt="作者头像" class="w-10 h-10 rounded-full object-cover" loading="lazy">
                             <div class="ml-3">
                                 <p class="font-medium">张伟</p>
                                 <p class="text-neutral-500 text-xs">3D艺术家</p>
@@ -405,9 +409,9 @@
                 </div>
                 
                 <!-- 作品卡片5 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden c">
                     <div class="relative h-60 overflow-hidden">
-                        <img src="img/9.png" alt="fll" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <img src="img/9.png" alt="fll" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
                         <div class="absolute top-3 right-3">
                             <button class="bg-white/80 hover:bg-white text-neutral-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
                                 <i class="fa fa-heart-o"></i>
@@ -425,7 +429,7 @@
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <img src="img/7.png" alt="作者头像" class="w-10 h-10 rounded-full object-cover">
+                            <img src="img/7.png" alt="作者头像" class="w-10 h-10 rounded-full object-cover" loading="lazy">
                             <div class="ml-3">
                                 <p class="font-medium">顾雪</p>
                                 <p class="text-neutral-500 text-xs">日漫</p>
@@ -435,9 +439,9 @@
                 </div>
                 
                 <!-- 作品卡片6 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden c">
                     <div class="relative h-60 overflow-hidden">
-                        <img src="img/b.png" alt="riben" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <img src="img/b.png" alt="riben" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
                         <div class="absolute top-3 right-3">
                             <button class="bg-white/80 hover:bg-white text-neutral-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
                                 <i class="fa fa-heart-o"></i>
@@ -455,7 +459,7 @@
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <img src="img/d.png" alt="作者头像" class="w-10 h-10 rounded-full object-cover">
+                            <img src="img/d.png" alt="作者头像" class="w-10 h-10 rounded-full object-cover" loading="lazy">
                             <div class="ml-3">
                                 <p class="font-medium">李田</p>
                                 <p class="text-neutral-500 text-xs">李田大师</p>
@@ -483,9 +487,9 @@
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 <!-- 创作者1 -->
-                <div class="bg-white rounded-xl shadow-md p-5 text-center card-hover">
+                <div class="bg-white rounded-xl shadow-md p-5 text-center c">
                     <div class="relative inline-block mb-4">
-                        <img src="img/8.png" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md">
+                        <img src="img/8.png" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md" loading="lazy">
                         <div class="absolute -top-1 -right-1 bg-primary text-white text-xs w-6 h-6 rounded-full flex items-center justify-center">
                             <i class="fa fa-crown"></i>
                         </div>
@@ -505,9 +509,9 @@
                 </div>
                 
                 <!-- 创作者2 -->
-                <div class="bg-white rounded-xl shadow-md p-5 text-center card-hover">
+                <div class="bg-white rounded-xl shadow-md p-5 text-center c">
                     <div class="relative inline-block mb-4">
-                        <img src="img/l.jpg" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md">
+                        <img src="img/l.jpg" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md" loading="lazy">
                     </div>
                     <h3 class="font-bold text-lg mb-1">刘可</h3>
                     <p class="text-neutral-600 text-sm mb-3">设计师</p>
@@ -524,9 +528,9 @@
                 </div>
                 
                 <!-- 创作者3 -->
-                <div class="bg-white rounded-xl shadow-md p-5 text-center card-hover">
+                <div class="bg-white rounded-xl shadow-md p-5 text-center c">
                     <div class="relative inline-block mb-4">
-                        <img src="img/d.png" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md">
+                        <img src="img/d.png" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md" loading="lazy">
                     </div>
                     <h3 class="font-bold text-lg mb-1">顾雪</h3>
                     <p class="text-neutral-600 text-sm mb-3">插画师</p>
@@ -543,9 +547,9 @@
                 </div>
                 
                 <!-- 创作者4 -->
-                <div class="bg-white rounded-xl shadow-md p-5 text-center card-hover">
+                <div class="bg-white rounded-xl shadow-md p-5 text-center c">
                     <div class="relative inline-block mb-4">
-                        <img src="img/2.png" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md">
+                        <img src="img/2.png" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md" loading="lazy">
                     </div>
                     <h3 class="font-bold text-lg mb-1">李田</h3>
                     <p class="text-neutral-600 text-sm mb-3">3D艺术家</p>
@@ -562,9 +566,9 @@
                 </div>
                 
                 <!-- 创作者5 -->
-                <div class="bg-white rounded-xl shadow-md p-5 text-center card-hover">
+                <div class="bg-white rounded-xl shadow-md p-5 text-center c">
                     <div class="relative inline-block mb-4">
-                        <img src="img/j.png" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md">
+                        <img src="img/j.png" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md" loading="lazy">
                     </div>
                     <h3 class="font-bold text-lg mb-1">林雨</h3>
                     <p class="text-neutral-600 text-sm mb-3">设计师</p>
@@ -581,9 +585,9 @@
                 </div>
                 
                 <!-- 创作者6 -->
-                <div class="bg-white rounded-xl shadow-md p-5 text-center card-hover">
+                <div class="bg-white rounded-xl shadow-md p-5 text-center c">
                     <div class="relative inline-block mb-4">
-                        <img src="img/6.jpg" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md">
+                        <img src="img/6.jpg" alt="创作者头像" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md" loading="lazy">
                     </div>
                     <h3 class="font-bold text-lg mb-1">刘俊锋</h3>
                     <p class="text-neutral-600 text-sm mb-3">路遥</p>
@@ -612,9 +616,9 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- 活动1 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden c">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="img/34.jpg" alt="比赛" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <img src="img/34.jpg" alt="比赛" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
                         <div class="absolute top-4 left-4 bg-primary text-white text-sm font-bold px-3 py-1 rounded-full">
                             进行中
                         </div>
@@ -633,9 +637,9 @@
                 </div>
                 
                 <!-- 活动2 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden c">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="img/2.png" alt="工作坊" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <img src="img/2.png" alt="工作坊" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
                         <div class="absolute top-4 left-4 bg-secondary text-white text-sm font-bold px-3 py-1 rounded-full">
                             即将开始
                         </div>
@@ -654,9 +658,9 @@
                 </div>
                 
                 <!-- 活动3 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden c">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="img/c.png" alt="线上讲座" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <img src="img/c.png" alt="线上讲座" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
                         <div class="absolute top-4 left-4 bg-secondary text-white text-sm font-bold px-3 py-1 rounded-full">
                             即将开始
                         </div>
@@ -736,7 +740,7 @@
         </section>
     </main>
 
-    <!-- 页脚 -->
+   
     <footer class="bg-neutral-800 text-white pt-16 pb-8">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
@@ -792,4 +796,117 @@
                             <span class="text-neutral-400">河南大学创意园区A座501</span>
                         </li>
                         <li class="flex items-center">
-                            
+                            <i class="fa fa-phone text-primary mr-3"></i>
+                            <span class="text-neutral-400">0371-12345678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope text-primary mr-3"></i>
+                            <span class="text-neutral-400">contact@heda-creative.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-neutral-700 pt-8 text-center text-neutral-500 text-sm">
+                <p>© 2025 河大创意平台. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('carousel');
+            const items = document.querySelectorAll('.f');
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            
+            let currentIndex = 0;
+            const totalItems = items.length;
+            let autoplayInterval;
+            
+           
+            function showItem(index) {
+                items.forEach(item => item.style.opacity = '0');
+                indicators.forEach((indicator, i) => {
+                    indicator.style.opacity = i === index ? '1' : '0.5';
+                });
+                items[index].style.opacity = '1';
+                currentIndex = index;
+            }
+            
+         
+            function nextItem() {
+                const nextIndex = (currentIndex + 1) % totalItems;
+                showItem(nextIndex);
+            }
+            
+        
+            function prevItem() {
+                const prevIndex = (currentIndex - 1 + totalItems) % totalItems;
+                showItem(prevIndex);
+            }
+            
+          
+            function startAutoplay() {
+                autoplayInterval = setInterval(nextItem, 1500);
+            }
+            
+      
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
+            
+        
+            nextBtn.addEventListener('click', () => {
+                nextItem();
+                startAutoplay();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                prevItem();
+                startAutoplay();
+            });
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    showItem(index);
+                    startAutoplay();
+                });
+            });
+            
+         
+            carousel.addEventListener('mouseenter', stopAutoplay);
+            carousel.addEventListener('mouseleave', startAutoplay);
+            
+       
+            startAutoplay();
+        });
+        
+      
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('main-header');
+            
+            function handleScroll() {
+                if (window.scrollY > 50) {
+                    header.classList.add('e');
+                } else {
+                    header.classList.remove('e');
+                }
+            }
+            
+            window.addEventListener('scroll', () => {
+                requestAnimationFrame(handleScroll);
+            });
+            
+           
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
